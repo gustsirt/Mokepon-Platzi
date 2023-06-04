@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
+        <link rel="stylesheet" href="./assets/styles.css">
+    </head>
+    <body>
+
+        <section class="sec-cent"> <!-- titulo -->
+            <h1 class="titulo">Mokepon</h1>
+        </section>
+
+        <section class="sec-cent" id="seleccionar-mascota"> <!-- selec mascota -->
+            <h2 class="subtitulo">Elige tu mascota:</h2>
+
+            <div id="contenedorTarjetas" class="tarjetas">
+                <!-- aqui se cargaran los mokepones por JS
+                MODELO:
+                <input type="radio" name="mascota" id="Hipodoge" />
+                <label class="tarjeta__mokepon" for="Hipodoge">
+                    <p>Hipodoge</p>
+                    <img src= #ruta# alt="Hipodoge">
+                </label>
+                -->
+            </div>
+
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
+
+        <section class="sec-cent" id="seleccionar-ataque"> <!-- seccion ATAQUES -->
+            <h2 class="subtitulo">Elige tu ataque:</h2>
+
+            <div id="contenedorAtaques" class="tarjetas">
+                <!-- aqui se cargan los botones ataque por JS
+                <button id="boton-fuego" class="boton-de-ataque"> "🔥"} </button>
+                -->
+            </div>
+
+            <div class="ataques"> <!-- seccion mensajes -->
+
+                <div class="tarjeta__mokepon tarjeta__mokepon--vertical">
+                    <img src="" id="foto-mascota-jugador" alt="foto jugador">
+                    <p id="mascota-jugador"></p>
+                    <p id="vidas-jugador">3</p>
+                </div>
+
+                <div class="mensajes-todos">
+                    <div class="mensajes" id="ataques-del-jugador"></div>
+                    <div class="mensajes" id="mensajes"></div>
+                    <div class="mensajes" id="ataques-del-enemigo"></div>
+                </div>
+
+                <div class="tarjeta__mokepon tarjeta__mokepon--vertical">
+                    <img src="" id="foto-mascota-enemigo" alt="foto enemigo">
+                    <p id="mascota-enemigo"></p>
+                    <p id="vidas-enemigo">3</p>
+                </div>
+            </div>
+
+            <div id="mensajes-globales">    
+                <p id="resultado">Mucha suerte</p>
+
+
+            <section id="reiniciar"> <!-- seccion reiniciar -->
+                    <button id="boton-reiniciar"><strong>Volver a Empezar</strong></button>
+                </section>
+            </div>
+
+
+        </section>
+        <script src="./js/mokepon.js"></script>
+    </body>
+</html>
