@@ -4,9 +4,6 @@ const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
 const sectionReiniciar = document.getElementById('reiniciar')
 
 // SECCION MASCOTA ------------------------------------------
-let inputHipodoge
-let inputCapipepo
-let inputRatigueya
 const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 const botonMascotaJugador = document.getElementById('boton-mascota')
 
@@ -22,9 +19,7 @@ const imgMascotaEnemigo = document.getElementById('foto-mascota-enemigo')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 
 const contenedorAtaques = document.getElementById('contenedorAtaques')
-let botonFuego
-let botonAgua
-let botonTierra
+
 let botonesAtaques = []
 
 const ataquesDelJugador = document.getElementById('ataques-del-jugador')
@@ -34,10 +29,10 @@ const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 const sectionMensajes = document.getElementById('resultado')
 const botonReiniciar = document.getElementById('boton-reiniciar')
 
-let mascotaJugador
-let mascotaEnemigo
+let mascotaJugador // numero en el arreglo
+let mascotaEnemigo // numero en el arreglo
 let ataqueJugador = []
-let ataqueEnemigo
+let ataqueEnemigo = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -93,6 +88,7 @@ function iniciarJuego() {
 
     //mostrarEleccionAtaques()  <-- se ejecuta en   : seleccionarMascotaJugador()
     //secuenciaAtaques()        <-- se ejecuta en   : mostrarEleccionMascotas()
+    //ataqueAleatorioEnemigo()  <-- se ejecuta en   : secuenciaAtaques()
 
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
@@ -169,10 +165,6 @@ function mostrarEleccionAtaques() { // se ejecuta en -- seleccionarMascotaJugado
             contenedorAtaques.innerHTML += ataqueMokepon
     })
 
-    botonFuego = document.getElementById('boton-fuego')
-    botonAgua = document.getElementById('boton-agua')
-    botonTierra = document.getElementById('boton-tierra')
-
     botonesAtaques = document.querySelectorAll('.boton-de-ataque')
 
     secuenciaAtaques()
@@ -185,9 +177,32 @@ function secuenciaAtaques() { // se ejecuta en -- mostrarEleccionAtaques
             boton.style.background = "#bbbfc3"
         }) 
     })
+
+    ataqueAleatorioEnemigo()
 }
 
-function ataqueAleatorioEnemigo() {
+function ataqueAleatorioEnemigo() { // se ejecuta en -- secuenciaAtaques
+    let auxxx = mokepones[mascotaEnemigo].ataques
+
+    auxxx.forEach((ataqq) => {
+        ataqueEnemigo.push(ataqq.nombre)
+    })
+
+    let i = ataqueEnemigo.length;
+    let j;
+    let temp;
+
+    while (i-- > 0) {
+        j = aleatorio(0, 4)
+        temp = ataqueEnemigo[j]
+        ataqueEnemigo[j] = ataqueEnemigo[i]
+        ataqueEnemigo[i] = temp
+    }
+
+    console.log(ataqueEnemigo)
+
+    /*mokepones[a]
+    ataqueEnemigo
     let ataqueAleatorio = aleatorio(1,3)
     
     if (ataqueAleatorio == 1) {
@@ -198,7 +213,7 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = '🌱'
     }
 
-    combate()
+    combate()*/
 }
 
 function combate() {
@@ -250,10 +265,6 @@ function crearMensaje(resultado) {
 function crearMensajeFinal(resultadoFinal) {
 
     sectionMensajes.innerHTML = resultadoFinal
-
-    botonFuego.disabled = true
-    botonAgua.disabled = true
-    botonTierra.disabled = true
 
     sectionReiniciar.style.display = 'block'
 }
