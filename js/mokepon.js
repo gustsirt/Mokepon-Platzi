@@ -89,6 +89,7 @@ function iniciarJuego() {
     //mostrarEleccionAtaques()  <-- se ejecuta en   : seleccionarMascotaJugador()
     //secuenciaAtaques()        <-- se ejecuta en   : mostrarEleccionMascotas()
     //ataqueAleatorioEnemigo()  <-- se ejecuta en   : secuenciaAtaques()
+    //iniciarPelea()            <-- se ejecuta en   : ataqueAleatorioEnemigo()
 
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
@@ -170,21 +171,23 @@ function mostrarEleccionAtaques() { // se ejecuta en -- seleccionarMascotaJugado
     secuenciaAtaques()
 }
 function secuenciaAtaques() { // se ejecuta en -- mostrarEleccionAtaques 
+    let contador = 0;
+
     botonesAtaques.forEach((boton) => {
         boton.addEventListener('click', (e) => {
             ataqueJugador.push(e.target.innerText)
             boton.disabled = true
             boton.style.background = "#bbbfc3"
+            contador = contador + 1
+            if (contador === 5){ ataqueAleatorioEnemigo() }
         }) 
     })
-
-    ataqueAleatorioEnemigo()
 }
 
 function ataqueAleatorioEnemigo() { // se ejecuta en -- secuenciaAtaques
-    let auxxx = mokepones[mascotaEnemigo].ataques
+    let aux = mokepones[mascotaEnemigo].ataques
 
-    auxxx.forEach((ataqq) => {
+    aux.forEach((ataqq) => {
         ataqueEnemigo.push(ataqq.nombre)
     })
 
@@ -199,21 +202,14 @@ function ataqueAleatorioEnemigo() { // se ejecuta en -- secuenciaAtaques
         ataqueEnemigo[i] = temp
     }
 
-    console.log(ataqueEnemigo)
-
-    /*mokepones[a]
-    ataqueEnemigo
-    let ataqueAleatorio = aleatorio(1,3)
     
-    if (ataqueAleatorio == 1) {
-        ataqueEnemigo = '🔥'
-    } else if (ataqueAleatorio == 2) {
-        ataqueEnemigo = '💧'
-    } else {
-        ataqueEnemigo = '🌱'
-    }
+    iniciarPelea()
+}
 
-    combate()*/
+function iniciarPelea() { // se ejecuta en -- ataqueAleatorioEnemigo
+    if(ataqueJugador.length === 5 && ataqueEnemigo.length === 5){
+        console.log("iniciar ataque")
+    }
 }
 
 function combate() {
