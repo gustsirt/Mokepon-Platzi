@@ -208,7 +208,7 @@ function ataqueAleatorioEnemigo() { // se ejecuta en -- secuenciaAtaques
 
 function iniciarPelea() { // se ejecuta en -- ataqueAleatorioEnemigo
     if(ataqueJugador.length === 5 && ataqueEnemigo.length === 5){
-        console.log("iniciar ataque")
+        combate()
     }
 }
 
