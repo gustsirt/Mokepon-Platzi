@@ -173,10 +173,6 @@ function mostrarEleccionAtaques() { // se ejecuta en -- seleccionarMascotaJugado
     botonAgua = document.getElementById('boton-agua')
     botonTierra = document.getElementById('boton-tierra')
 
-    /*botonFuego.addEventListener('click', ataqueFuego)
-    botonAgua.addEventListener('click', ataqueAgua)
-    botonTierra.addEventListener('click', ataqueTierra)*/
-
     botonesAtaques = document.querySelectorAll('.boton-de-ataque')
 
     secuenciaAtaques()
@@ -190,19 +186,6 @@ function secuenciaAtaques() { // se ejecuta en -- mostrarEleccionAtaques
         }) 
     })
 }
-
-/*function ataqueFuego() {  // se ejecuta en -- mostrarEleccionAtaques 
-    ataqueJugador = '🔥'
-    ataqueAleatorioEnemigo()
-}
-function ataqueAgua() {  // se ejecuta en -- mostrarEleccionAtaques 
-    ataqueJugador = '💧'
-    ataqueAleatorioEnemigo()
-}
-function ataqueTierra() {  // se ejecuta en -- mostrarEleccionAtaques 
-    ataqueJugador = '🌱'
-    ataqueAleatorioEnemigo()
-}*/
 
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
