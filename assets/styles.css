@@ -30,6 +30,8 @@ body {
 
 .tarjetas{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 30px;}
 
@@ -49,8 +51,8 @@ body {
 .tarjeta__mokepon--vertical {
     flex-direction: column;}
 
-@media (max-width: 360px) {
-  .tarjetas{
+@media (max-width: 500px) {
+  .tarjetas {
     flex-direction: column;}
 }
 
