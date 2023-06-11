@@ -1,55 +1,82 @@
 /*  AREA ATAQUE
 ----------------------------------------*/
+#seleccionar-ataque{
+  .boton-de-ataque {
+    background-color: #6e7784;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 130px;
+    color: white;
+    font-family: 'Poppins', sans-serif;}
 
-.boton-de-ataque {
-  background-color: #6e7784;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border-color: transparent;
-  width: 130px;
-  color: white;
-  font-family: 'Poppins', sans-serif;}
+  .ataques {
+    display: grid;
+    width: 70%;
+    grid-template-columns: 1fr 2fr 1fr;
+    color: white;
+    gap: 15px;
 
-.ataques {
-  display: grid;
-  width: 70%;
-  grid-template-columns: 1fr 2fr 1fr;
-  color: white;
-  gap: 15px;
-}
-.mensajes-todos{
-  display: flex;
-  justify-content: space-between;
-  background: #EEEEEE;
-  color: #6e7784;
-  border-radius: 20px;
-}
-.mensajes{
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: left;
+    .tarjeta__mokepon {
+      width: 180px;
+      height: auto;
+      background: #6e7784;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color0;
+    
+      & img {
+        width: 80px;
+      }
+    
+      &--vertical {
+        flex-direction: column;
+      }
+
+      #victorias-jugador, #victorias-enemigo {
+        margin: 0;
+      }
+
+    }  
+
+    .mensajes-todos{
+      display: flex;
+      justify-content: space-between;
+      background: #EEEEEE;
+      color: #6e7784;
+      border-radius: 20px;
+
+      .mensajes{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: left;
+  
+        p{
+          margin: 0.1rem 1rem;}
+        }
+    }
   }
-.mensajes p{
-  margin: 0.1rem 1rem;}
 
-#vidas-jugador, #vidas-enemigo {
-  font-size: 32px;
-  margin: 0;
+
+
+  #mensajes-globales{
+    width: 280px;
+    background: #EEEEEE;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;}
+
+  #boton-reiniciar {
+    border: none;
+    color: #1e1f21;
+    font-family: 'Poppins', sans-serif;}
 }
-
-#mensajes-globales{
-  width: 280px;
-  background: #EEEEEE;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;}
-
-#boton-reiniciar {
-  border: none;
-  color: #1e1f21;
-  font-family: 'Poppins', sans-serif;}
