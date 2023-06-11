@@ -1,0 +1,74 @@
+/*  AREA GENERAL
+----------------------------------------*/
+
+.sec-cent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .titulo {
+    color: $color0;
+    font-size: 32px;
+    font-family: 'Fredoka One', cursive;
+    margin: 1rem;
+  }
+  .subtitulo {
+    color: $color0;
+    font-size: 20px;
+    margin: 1rem;
+  }
+
+  .tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+
+    input {
+      display: none;}
+    input:checked + label {
+      background-color: #3b3e47;}
+      
+    .tarjeta__mokepon {
+      width: 180px;
+      height: auto;
+      background: #6e7784;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color0;
+    
+      & img {
+        width: 80px;
+      }
+    
+      &--vertical {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sec-cent {
+    & .tarjetas {
+      flex-direction: column;
+    }
+  }
+}
+
+/*  AREA MASCOTA
+----------------------------------------*/
+#boton-mascota {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-family: 'Poppins', sans-serif;}
