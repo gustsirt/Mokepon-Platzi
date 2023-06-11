@@ -6,4 +6,22 @@
   #mapa{
     border: 2px solid white;
   }
+  .botones {
+    display: grid;
+    grid-template-areas:
+      ". up ."
+      "lf dw rg";
+    justify-content: center;
+    align-content: center;
+    
+    @mixin bot() {
+      border: 3px solid rgb(76, 76, 76);
+      width: 25px;
+      height: 25px;
+    }
+    .up { @include bot(); grid-area: up;}
+    .lf { @include bot(); grid-area: lf;}
+    .dw { @include bot(); grid-area: dw;}
+    .rg { @include bot(); grid-area: rg;}
+  }
 }

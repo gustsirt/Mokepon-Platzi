@@ -35,6 +35,12 @@
         <section class="sec-cent" id="ver-mapa">
             <h2 class="subtitulo">Recorre el mapa con tu Mokepon</h2>
             <canvas id="mapa"></canvas>
+            <div class="botones">
+                <button class="up" onpointerdown="moverMokeponArriba()" onpointerup="detenerMovimiento()">⬆</button>
+                <button class="dw" onpointerdown="moverMokeponAbajo()" onpointerup="detenerMovimiento()">⬇</button>
+                <button class="lf" onpointerdown="moverMokeponIzquierda()" onpointerup="detenerMovimiento()">⬅</button>
+                <button class="rg" onpointerdown="moverMokeponDerecha()" onpointerup="detenerMovimiento()">➡</button>
+            </div>
         </section> <!-- FIN mascota -->
 
 
